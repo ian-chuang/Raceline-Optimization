@@ -152,7 +152,7 @@ if opt_type == 'mintime' \
 # create outputs folder(s)
 os.makedirs(file_paths["module"] + f"/outputs/{MAP_NAME}", exist_ok=True)
 
-TIME = str(datetime.now())
+TIME = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 if opt_type == 'mintime':
     os.makedirs(file_paths["module"] + f"/outputs/{MAP_NAME}/mintime-{TIME}", exist_ok=True)
 
