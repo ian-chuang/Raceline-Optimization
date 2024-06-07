@@ -26,7 +26,7 @@ calculating the global race trajectory.
 
 First, clone the repository
 ```bash
-git clone https://github.com/CL2-UWaterloo/Raceline-Optimization.git
+git clone https://github.com/ian-chuang/Raceline-Optimization.git
 cd Raceline-Optimization
 ```
 
