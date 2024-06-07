@@ -1,3 +1,56 @@
+# Updated Instructions for UC Davis F1Tenth Raceline Optimization
+
+## Setup Instructions
+
+First, clone the repository:
+
+```bash
+git clone https://github.com/ian-chuang/Raceline-Optimization.git
+cd Raceline-Optimization
+```
+
+Then, set up your virtual environment. Conda is the recommended method. Install MiniConda [here](https://docs.anaconda.com/free/miniconda/miniconda-install/).
+
+```bash
+conda create --name raceline python=3.8
+conda activate raceline
+```
+
+Next, ensure you have Jupyter Notebook installed or use VS Code with the Jupyter Notebook extension.
+
+## Generating the Raceline
+
+1. **Prepare Your Map:**
+
+   Use Photoshop or Paint 3D to clean up and draw proper boundaries on your raceline. Then transfer your map (png/pgm + yaml file) to the `maps` folder. It is recommended to have the following files:
+   
+   - `<your_map>.png` (photoshopped map)
+   - `<your_map>_raw.png` (raw unmodified map)
+   - `<your_map>.yaml` (map yaml)
+
+2. **Convert the Map:**
+
+   Open `map_converter.ipynb`, and in the second code cell, change the `MAP_NAME` variable to your `<map_name>`. Then run all the cells.
+
+3. **Sanity Check:**
+
+   Open `sanity_check.ipynb`, and in the second code cell, change the `MAP_NAME` variable to your `<map_name>`. Run all the cells to perform a sanity check.
+
+4. **Generate Raceline:**
+
+   Run the following command to generate the raceline:
+
+   ```bash
+   conda activate raceline
+   python main_globaltraj_f110.py --map_name <map_name>
+   ```
+
+5. **Visualize the Raceline:**
+
+   Open `visualize_raceline.ipynb`, and in the second code cell, change the `MAP_NAME` variable to your `<map_name>`. Run all the cells to visualize the raceline.
+
+You can find your generated raceline in the `output` directory. Copy the CSV file and transfer it to the car.
+
 # Introduction
 This repository contains algorithms that allow us to determine an optimal racing line on a race track. You can chose
 between several objectives:
